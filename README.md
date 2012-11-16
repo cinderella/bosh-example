@@ -102,6 +102,21 @@ Make the following changes to the template:
 3. Update the default_key_name and ec2_private_key to match yours.
 4. Update the availability zone and endpoint settings to match your availability zone. For instance, if you deploy to us-east-1 you should set the availability zone to either us-east-1a or us-east-1b.
 
+At this point, you're ready to start the deployment of the micro bosh to AWS. Make sure you're in the deployments directory you created above:
+
+```
+$ cd ~/deployments
+```
+
+Select the deployment you've created:
+```
+bosh micro deployment aws
+```
+
+*Note:* don’t be concerned by seemingly inaccurate message WARNING! Your target has been changed to `http://aws:25555!
+
+
+
 ## Cinderella Setup ##
 
 1. Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
