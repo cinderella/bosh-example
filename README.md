@@ -29,7 +29,9 @@ $ gem install bosh_deployer
 
 The Micro BOSH instance will be setup on EC2. 
 
-First, create a security group called "bosh" with the following opened ports:
+Create a key pair and name it "bosh".
+
+Create a security group called "bosh" with the following opened ports:
 
 * 22
 * 2825
@@ -40,7 +42,7 @@ First, create a security group called "bosh" with the following opened ports:
 * 25777
 * 25888
 
-Second, allocate an Elastic IP for the micro bosh instance.
+Allocate an Elastic IP for the micro bosh instance.
 
 Third, create supporting directory structure:
 
@@ -73,8 +75,8 @@ cloud:
   plugin: aws
   properties:
     aws:
-      access_key_id: AKIAIYJWVDUP4KRWBESQ
-      secret_access_key: EVGFswlmOvA33ZrU1ViFEtXC5Sugc19yPzokeWRf
+      access_key_id: YOUR_ACCESS_KEY_ID
+      secret_access_key: YOUR_SECRET_ACCESS_KEY
       default_key_name: bosh
       default_security_groups: ["bosh"]
       ec2_private_key: ~/.ssh/bosh
@@ -90,9 +92,11 @@ apply_spec:
     aws_registry:
       address: x.x.x.x
 ```
+Make the following changes to the template:
 
-Replace all instances of 'x.x.x.x' with the Elastic IP address you allocated.
-
+1. Replace all instances of 'x.x.x.x' with the Elastic IP address you allocated above.
+2. Update YOUR_ACCESS_KEY_ID and YOUR_SECRET_ACCESS_KEY to match your AWS credentials.
+3. Update the default_key_name and ec2_private_key to match yours.
 
 ## Cinderella Setup ##
 
