@@ -207,6 +207,14 @@ If everything went smoothly, you should be able to open `http://YOUR_APP_NAME.cl
 OK!
 ```
 
+You can also test with an EC2 call:
+```
+ec2-describe-availability-zones -U http://YOUR_APP_NAME.cloudfoundry.com/api/ -O YOUR_AWS_ACCESS_KEY -W YOUR_AWS_SECRET_KEY -v --debug --request-timeout 120
+```
+
+## Deploy an application to vCloud
+
+TODO
 
 ## References
 
