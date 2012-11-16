@@ -136,10 +136,31 @@ bosh micro deploy ami-xxxxxxxx
 
 Within 20 minutes your instance of micro BOSH will be deployed. After the ‘Done’ message appears, you have a running micro BOSH instance.
 
+Target the newly deployed micro bosh, again substituting 'x.x.x.x' with your Elastic IP address:
+```
+$ bosh target http://x.x.x.x:25555
+```
+
+Login to the micro bosh using the default credentials:
+```
+$ bosh login
+```
+
+Then get the status of the micro bosh:
+```
+$ bosh status
+```
+
 
 ## Cinderella Setup ##
 
-1. Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
+Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
+
+Once you've successfully built Cinderella you can deploy to CloudFoundry.
+
+
+
+
 
 
 ## References
