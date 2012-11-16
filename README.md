@@ -150,8 +150,6 @@ Then get the status of the micro bosh:
 ```
 $ bosh status
 ```
-
-
 ## Cinderella Setup ##
 
 Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
@@ -209,7 +207,31 @@ OK!
 
 You can also test with an EC2 call:
 ```
-ec2-describe-availability-zones -U http://YOUR_APP_NAME.cloudfoundry.com/api/ -O YOUR_AWS_ACCESS_KEY -W YOUR_AWS_SECRET_KEY -v --debug --request-timeout 120
+$ ec2-describe-availability-zones -U http://YOUR_APP_NAME.cloudfoundry.com/api/ -O YOUR_AWS_ACCESS_KEY -W YOUR_AWS_SECRET_KEY -v --debug --request-timeout 120
+```
+
+## Update Micro BOSH
+
+In order to leverage Cinderella's orchestration of vCloud resources, we need to update the micro bosh and point it to Cinderella instead of the existing EC2 endpoint.
+
+Start by ssh'ing to the micro bosh running in EC2:
+```
+$ ssh -i ~/.ssh/YOUR_KEYPAIR_NAME.pem vcap@YOUR_ELASTIC_IP
+```
+Change to root user:
+```
+$ sudo su -
+```
+The default root password is `C10udc0w`
+
+Now edit `/var/vcap/jobs/director/config/director.yml.erb` and update the "cloud:" section at the bottom:
+```
+todo
+```
+
+Then restart the director wiht: 
+```
+$ monit restart director
 ```
 
 ## Deploy an application to vCloud
