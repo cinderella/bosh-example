@@ -58,7 +58,7 @@ $ cd ~/deployments
 $ mkdir aws
 ```
 
-Create ~/deployments/aws/micro_bosh.yml using the following template:
+Create `~/deployments/aws/micro_bosh.yml` using the following template:
 
 ```
 ---
@@ -193,7 +193,7 @@ Staging Application 'YOUR_APP_NAME': OK
 Starting Application 'YOUR_APP_NAME': OK 
 ```
 
-Add environment variables required by Cinderella (these should match the properties in ~/.cinderella/ec2-service.properties:
+Add environment variables required by Cinderella (these should match the properties in `~/.cinderella/ec2-service.properties`):
 ```
 $ vmc env-add YOUR_APP_NAME aws_key_YOUR_AWS_ACCESS_KEY=YOUR_AWS_SECRET_KEY
 $ vmc env-add YOUR_APP_NAME vcd_endpoint=YOUR_VCD_ENDPOINT
