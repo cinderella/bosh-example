@@ -14,5 +14,8 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 
 ## Overview ##
 
+![Interaction of Components](https://github.com/cinderella/bosh-example/raw/master/bosh-example.png)
+
+
 
 
