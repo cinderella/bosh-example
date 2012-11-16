@@ -1,6 +1,6 @@
 # bosh-example (in progress) #
 
-This example will walk through the steps necessary to use BOSH with Cinderella. This is not to be meant to be an example of a best practice but instead is a proof of concept to illustrate Cinderella's capabilities.
+This example will walk through the steps necessary to use BOSH with Cinderella. This is not a best practice but instead is a proof of concept to illustrate Cinderella's EC2 capabilities.
 
 ## What is BOSH? ##
 
