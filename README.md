@@ -160,7 +160,47 @@ Once you've successfully built Cinderella you can deploy to CloudFoundry.
 
 First, install the command line client for CloudFoundry using the instructions here: [Installing the Command-Line Interface (vmc)](http://docs.cloudfoundry.com/tools/vmc/installing-vmc.html)
 
+Deploy Cinderella to CloudFoundry:
+```
+$ cd /path/to/cinderella
+$ vmc push YOUR_APP_NAME
+Would you like to deploy from the current directory? [Yn]: n
+Deployment path: cinderella-web/target/cinderella.jar
+Detected a Standalone Application, is this correct? [Yn]: y
+1: java
+2: java7
+3: node
+4: node06
+5: node08
+6: ruby18
+7: ruby19
+Select Runtime [java]: 1
+Selected java
+Start Command: java $JAVA_OPTS -jar cinderella.jar
+Application Deployed URL [None]: YOUR_APP_NAME.cloudfoundry.com
+Memory reservation (128M, 256M, 512M, 1G, 2G) [512M]: 1G
+How many instances? [1]: 1
+Create services to bind to 'cinderella2'? [yN]: n
+Would you like to save this configuration? [yN]: n
+Creating Application: OK
+Uploading Application:
+  Checking for available resources: OK
+  Processing resources: OK
+  Packing application: OK
+  Uploading (0K): OK   
+Push Status: OK
+Staging Application 'YOUR_APP_NAME': OK                                           
+Starting Application 'YOUR_APP_NAME': OK 
+```
 
+Add environment variables required by Cinderella (these should match the properties in ~/.cinderella/ec2-service.properties:
+```
+$ vmc env-add YOUR_APP_NAME aws_key_YOUR_AWS_ACCESS_KEY=YOUR_AWS_SECRET_KEY
+$ vmc env-add YOUR_APP_NAME vcd_endpoint=YOUR_VCD_ENDPOINT
+$ vmc env-add YOUR_APP_NAME vcd_useratorg=YOUR_VCD_USERATORG
+$ vmc env-add YOUR_APP_NAME vcd_password=YOUR_VCD_PASSWORD
+$ vmc env-add YOUR_APP_NAME vcd_network=YOUR_VCD_NETWORK
+```
 
 
 ## References
