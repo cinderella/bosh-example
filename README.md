@@ -11,6 +11,7 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 1. An AWS (Amazon Web Services) account.
 2. A CloudFoundry.com account.
 3. A vCloud Director org with credentials.
+4. A Mac or *nix computer with Ruby 1.9+ and rubygems 1.8+ installed.
 
 ## Overview ##
 
@@ -18,7 +19,11 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 
 ## BOSH CLI Setup ##
 
-TODO
+From command line:
+```
+$ gem install bosh_deployer
+```
+
 
 ## Micro BOSH Setup ##
 
@@ -36,6 +41,58 @@ First, create a security group called "bosh" with the following opened ports:
 * 25888
 
 Second, allocate an Elastic IP for the micro bosh instance.
+
+Third, create supporting directory structure:
+
+```
+$ mkdir ~/deployments
+$ cd ~/deployments
+$ mkdir aws
+```
+
+Create ~/deployments/aws/micro_bosh.yml using the following template:
+
+```
+---
+name: aws
+
+logging:
+  level: DEBUG
+
+network:
+  type: dynamic
+  vip: x.x.x.x
+
+resources:
+  persistent_disk: 20000
+  cloud_properties:
+    instance_type: m1.small
+    availability_zone: sa-east-1a
+
+cloud:
+  plugin: aws
+  properties:
+    aws:
+      access_key_id: AKIAIYJWVDUP4KRWBESQ
+      secret_access_key: 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
+      default_key_name: bosh
+      default_security_groups: ["bosh"]
+      ec2_private_key: ~/.ssh/bosh
+      ec2_endpoint: ec2.sa-east-1.amazonaws.com
+
+apply_spec:
+  agent:
+    blobstore:
+      address: x.x.x.x
+    nats:
+      address: x.x.x.x
+  properties:
+    aws_registry:
+      address: x.x.x.x
+```
+
+Replace all instances of 'x.x.x.x' with the Elastic IP address you allocated.
+
 
 ## Cinderella Setup ##
 
