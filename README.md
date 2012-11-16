@@ -9,7 +9,7 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 ## Prerequisites ##
 
 1. An AWS (Amazon Web Services) account.
-2. A CloudFoundry.com account.
+2. A [CloudFoundry.com](http://cloudfoundry.com) account.
 3. A vCloud Director org with credentials.
 4. A Mac or *nix computer with the following installed: 
     * Ruby 1.9+ and rubygems 1.8+
