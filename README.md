@@ -158,7 +158,7 @@ Follow the Getting Source, Build and Configuration steps in the [Cinderella READ
 
 Once you've successfully built Cinderella you can deploy to CloudFoundry.
 
-
+First, install the command line client for CloudFoundry using the instructions here: [Installing the Command-Line Interface (vmc)](http://docs.cloudfoundry.com/tools/vmc/installing-vmc.html)
 
 
 
@@ -167,7 +167,7 @@ Once you've successfully built Cinderella you can deploy to CloudFoundry.
 
 * [BOSH Documentation](https://github.com/cloudfoundry/oss-docs/blob/master/bosh/documentation/documentation.md)
 * [Deploying to AWS Using Cloud Foundry BOSH](http://blog.cloudfoundry.org/2012/09/06/deploying-to-aws-using-cloud-foundry-bosh/)
-
+* [Installing the Command-Line Interface (vmc)](http://docs.cloudfoundry.com/tools/vmc/installing-vmc.html)
 
 
 
