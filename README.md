@@ -226,13 +226,45 @@ The default root password is `C10udc0w`
 
 Now edit `/var/vcap/jobs/director/config/director.yml.erb` and update the "cloud:" section at the bottom:
 ```
-todo
+cloud:
+
+  plugin: aws
+  properties:
+    agent:
+      ntp: []
+      blobstore:
+        plugin: simple
+        properties:
+
+
+
+          endpoint: 'http://YOUR_ELASTIC_IP:25250'
+          user: agent
+          password: agent
+
+
+      mbus: nats://nats:nats@YOUR_ELASTIC_IP:4222
+
+    aws:
+      access_key_id: YOUR_AWS_ACCESS_KEY
+      secret_access_key: YOUR_AWS_SECRET_KEY
+      ec2_endpoint: YOUR_APP_NAME.cloudfoundry.com/api/
+      default_key_name: YOUR_KEYPAIR_NAME
+      default_security_groups: []
+    registry:
+      endpoint: http://YOUR_ELASTIC_IP:25777
+      user: admin
+      password: admin
+    stemcell:
+      kernel_id: 
 ```
 
-Then restart the director wiht: 
+Save your changes, then restart the director: 
 ```
 $ monit restart director
 ```
+
+At this point, the BOSH commands you issue from the cmd line will call into Cinderella with EC2 calls and in turn, issue vCloud Director API calls to your vCloud.
 
 ## Deploy an application to vCloud
 
