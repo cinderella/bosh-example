@@ -117,6 +117,22 @@ bosh micro deployment aws
 
 
 
+Start the deployment using the AMI from the BOSH AMIs section below:
+
+```
+bosh micro deploy ami-xxxxxxxx
+```
+
+* ap-northeast-1: ami-7656eb77
+* ap-southeast-1:	ami-64d59436
+* eu-west-1:	ami-874c4af3
+* sa-east-1:	ami-6280597f
+* us-east-1:	ami-69dd6900
+* us-west-1:	ami-4f3e1a0a
+* us-west-2:	ami-7ac7494a
+
+
+
 ## Cinderella Setup ##
 
 1. Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
