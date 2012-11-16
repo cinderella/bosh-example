@@ -202,6 +202,9 @@ $ vmc env-add YOUR_APP_NAME vcd_password=YOUR_VCD_PASSWORD
 $ vmc env-add YOUR_APP_NAME vcd_network=YOUR_VCD_NETWORK
 ```
 
+If everything went smoothly, you should be able to open `http://YOUR_APP_NAME.cloudfoundry.com/` in your browser and you'll see:
+```OK!```
+
 
 ## References
 
