@@ -11,7 +11,10 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 1. An AWS (Amazon Web Services) account.
 2. A CloudFoundry.com account.
 3. A vCloud Director org with credentials.
-4. A Mac or *nix computer with Ruby 1.9+ and rubygems 1.8+ installed.
+4. A Mac or *nix computer with the following installed: 
+    * Ruby 1.9+ and rubygems 1.8+
+    * Java 1.6+
+    * Maven 3.0.4+
 
 ## Overview ##
 
@@ -100,7 +103,7 @@ Make the following changes to the template:
 
 ## Cinderella Setup ##
 
-TODO
+1. Follow the Getting Source, Build and Configuration steps in the [Cinderella README.md](https://github.com/cinderella/cinderella/blob/master/readme.md)
 
 
 ## References
