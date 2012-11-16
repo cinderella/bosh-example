@@ -17,5 +17,24 @@ Cloud Foundry BOSH is an open source tool chain for release engineering, deploym
 ![Interaction of Components](https://github.com/cinderella/bosh-example/raw/master/bosh-example.png)
 
 
+## Setup Micro BOSH ##
+
+First, create a security group called "bosh" with the following opened ports:
+
+* 22
+* 2825
+* 4222
+* 6868
+* 25250
+* 25555
+* 25777
+* 25888
+
+Second, allocate an Elastic IP for the micro bosh instance.
+
+
+
+
+
 
 
