@@ -26,7 +26,10 @@ From command line:
 ```
 $ gem install bosh_deployer
 ```
-
+To verify the install, 
+```
+$ bosh help
+```
 
 ## Micro BOSH Setup ##
 
@@ -131,6 +134,7 @@ bosh micro deploy ami-xxxxxxxx
 * us-west-1:	ami-4f3e1a0a
 * us-west-2:	ami-7ac7494a
 
+Within 20 minutes your instance of micro BOSH will be deployed. After the ‘Done’ message appears, you have a running micro BOSH instance.
 
 
 ## Cinderella Setup ##
