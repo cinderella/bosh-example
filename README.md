@@ -100,6 +100,7 @@ Make the following changes to the template:
 1. Replace all instances of 'x.x.x.x' with the Elastic IP address you allocated above.
 2. Update YOUR_ACCESS_KEY_ID and YOUR_SECRET_ACCESS_KEY to match your AWS credentials.
 3. Update the default_key_name and ec2_private_key to match yours.
+4. Update the availability zone and endpoint settings to match your availability zone. For instance, if you deploy to us-east-1 you should set the availability zone to either us-east-1a or us-east-1b.
 
 ## Cinderella Setup ##
 
