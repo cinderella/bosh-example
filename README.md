@@ -33,6 +33,12 @@ First, create a security group called "bosh" with the following opened ports:
 Second, allocate an Elastic IP for the micro bosh instance.
 
 
+## References
+
+* [BOSH Documentation](https://github.com/cloudfoundry/oss-docs/blob/master/bosh/documentation/documentation.md)
+* [Deploying to AWS Using Cloud Foundry BOSH](http://blog.cloudfoundry.org/2012/09/06/deploying-to-aws-using-cloud-foundry-bosh/)
+
+
 
 
 
