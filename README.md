@@ -222,7 +222,7 @@ Change to root user:
 ```
 $ sudo su -
 ```
-The default root password is `C10udc0w`
+The default root password is `c1oudc0w`
 
 Now edit `/var/vcap/jobs/director/config/director.yml.erb` and update the "cloud:" section at the bottom:
 ```
