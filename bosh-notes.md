@@ -1,51 +1,12 @@
 # BOSH Notes
 
-In an effort to save time with downloading and uploading artifacts, the following steps were all done on an EC2 instance.
-
 Because BOSH documentation is sparse and out of date, I've compiled these notes to help with future work.
 
 ## Assumptions
 - ubuntu with ruby installed
 - install keypair for use with github
 
-## Procedure
-
-0. forked `cloudfoundry/bosh` to `cinderella/bosh` in order to make changes necessary for Cinderella.
-1. make changes and commit to `cinderella/bosh`
-2. cd ..
-3. Check out bosh-release: `git clone https://github.com/cloudfoundry/bosh-release.git`
-4. cd bosh-release
-5. `git submodule update --init`
-6. `bosh create release --with-tarball` (will create manifest and tarball in bosh-release/dev_releases needed in step 10)
-7. cd ../bosh/agent
-8. bundle install
-9. extra packages needed: `sudo apt-get install debootstrap kpartx`
-10. create stemcell from manifest and tarball created in step 6 (from bosh/agent): `rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]`
-  
-	Generated stemcell: /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz
-
-11. cd /var/vcap/deployments
-12. `gem install bosh_deployer`
-13. select cinders deployment: `bosh deployment cinders`
-
-WARNING! Your target has been changed to `http://cinders:25555'!
-Deployment set to '/var/vcap/deployments/cinders/micro_bosh.yml'
-
-14. do actual deploy of micro bosh stemcell: `bosh deploy /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz` 
-
----
-
-## References
-
-- [Create inception vm](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md)
-- [Create micro bosh from new stemcell](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md)
-- [Prepare inception script](https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh)
-- [Hints on how to create a cpi](https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ)
-
----
-
-
-## Using Fog to Create an Inception VM
+## Use Fog to Create an Inception VM
 
 ```
 connection = Fog::Compute.new({ :provider => 'AWS', :region => 'us-east-1' })
@@ -86,3 +47,36 @@ group.authorize_port_range(6868..6868)   # Message Bus
 group.authorize_port_range(25888..25888) # AWS Registry API
 group.authorize_port_range(22..22)       # SSH access
 ```
+
+## Procedure
+
+In an effort to save time with downloading and uploading artifacts, the following steps were all done on an EC2 instance (the inception vm created above).
+
+0. forked `cloudfoundry/bosh` to `cinderella/bosh` in order to make changes necessary for Cinderella.
+1. make changes and commit to `cinderella/bosh`
+2. cd ..
+3. Check out bosh-release: `git clone https://github.com/cloudfoundry/bosh-release.git`
+4. cd bosh-release
+5. `git submodule update --init`
+6. `bosh create release --with-tarball` (will create manifest and tarball in bosh-release/dev_releases needed in step 10)
+7. cd ../bosh/agent
+8. bundle install
+9. extra packages needed: `sudo apt-get install debootstrap kpartx`
+10. create stemcell from manifest and tarball created in step 6 (from bosh/agent): `rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]`
+...  
+Generated stemcell: /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz
+11. cd /var/vcap/deployments
+12. `gem install bosh_deployer`
+13. select cinders deployment: `bosh deployment cinders`
+WARNING! Your target has been changed to `http://cinders:25555'!
+Deployment set to '/var/vcap/deployments/cinders/micro_bosh.yml'
+14. do actual deploy of micro bosh stemcell: `bosh deploy /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz` 
+
+---
+
+## References
+
+- [Create inception vm](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md)
+- [Create micro bosh from new stemcell](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md)
+- [Prepare inception script](https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh)
+- [Hints on how to create a cpi](https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ)
