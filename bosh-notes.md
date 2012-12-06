@@ -24,13 +24,15 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
   
 	Generated stemcell: /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz
 
-11. create inception vm: https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md
-12. create micro bosh from new stemcell: https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md
+11. 
+12. 
 
 ---
 
 ## References
 
+- [Create inception vm](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md)
+- create micro bosh from new stemcell: https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md
 - Prepare inception script: https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh
 - Hints on how to create a cpi: https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ
 
