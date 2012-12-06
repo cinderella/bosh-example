@@ -105,6 +105,6 @@ Deployment set to '/var/vcap/deployments/cinders/micro_bosh.yml'
 ## References
 
 - [Create inception vm](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md)
-- [Create micro bosh from new stemcell](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md)
+- [Create micro bosh from new stemcell](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md) (these notes heavily influenced from)
 - [Prepare inception script](https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh)
 - [Hints on how to create a cpi](https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ)
