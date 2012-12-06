@@ -8,6 +8,18 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
 
 ## Use Fog to Create an Inception VM
 
+1. `gem install fog`
+2. create key pair specifically for fog
+3. create a fog config:
+```
+:default:
+  :aws_access_key_id:     YOUR_ACCESS_KEY
+  :aws_secret_access_key: YOUR_SECRET_KEY
+  :private_key_path: '/Users/shane/.ssh/fog_rsa'
+  :public_key_path: '/Users/shane/.ssh/fog_rsa.pub'
+```
+4. type `fog`, then follow steps below:
+
 ```
 connection = Fog::Compute.new({ :provider => 'AWS', :region => 'us-east-1' })
 
