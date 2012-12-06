@@ -1,23 +1,26 @@
 # BOSH Notes
 
-procedure for updating aws micro bosh for use with cinderella
+In an effort to save time with downloading and uploading artifacts, the following steps were all done on an EC2 instance.
 
-assumptions:
+Because BOSH documentation is sparse and out of date, I've compiled these notes to help with future work.
+
+## Assumptions
 - ubuntu with ruby installed
 - install keypair for use with github
 
+## Procedure
 
-0. fork cloudfoundry/bosh
-1. edit ~/bosh/*
+0. forked `cloudfoundry/bosh` to `cinderella/bosh` in order to make changes necessary for Cinderella.
+1. make changes and commit to `cinderella/bosh`
 2. cd ..
-3. git clone https://github.com/cloudfoundry/bosh-release.git
+3. Check out bosh-release: `git clone https://github.com/cloudfoundry/bosh-release.git`
 4. cd bosh-release
-5. git submodule update --init
-6. bosh create release --with-tarball (will create manifest and tarball in bosh-release/dev_releases needed in step 8)
+5. `git submodule update --init`
+6. `bosh create release --with-tarball` (will create manifest and tarball in bosh-release/dev_releases needed in step 10)
 7. cd ../bosh/agent
 8. bundle install
-9. sudo apt-get install debootstrap kpartx
-10. rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]
+9. extra packages needed: `sudo apt-get install debootstrap kpartx`
+10. create stemcell from manifest and tarball created in step 6: `rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]`
   
 	Generated stemcell: /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz
 
