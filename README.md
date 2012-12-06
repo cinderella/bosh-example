@@ -141,7 +141,7 @@ Target the newly deployed micro bosh, again substituting 'x.x.x.x' with your Ela
 $ bosh target http://x.x.x.x:25555
 ```
 
-Login to the micro bosh using the default credentials:
+Login to the micro bosh using the default credentials (admin/admin):
 ```
 $ bosh login
 ```
@@ -209,6 +209,26 @@ You can also test with an EC2 call:
 ```
 $ ec2-describe-availability-zones -U http://YOUR_APP_NAME.cloudfoundry.com/api/ -O YOUR_AWS_ACCESS_KEY -W YOUR_AWS_SECRET_KEY -v --debug --request-timeout 120
 ```
+
+## Updating Cinderella ##
+
+If you decide to hack on Cinderella and you want to push the changes to CloudFoundry:
+
+```
+$ cd /path/to/cinderella
+$ mvn clean package
+$ vmc update cinderella --path cinderella-web/target/cinderella.jar
+Uploading Application:
+  Checking for available resources: OK
+  Processing resources: OK
+  Packing application: OK
+  Uploading (15M): OK   
+Push Status: OK
+Stopping Application 'cinderella': OK
+Staging Application 'cinderella': OK                                            
+Starting Application 'cinderella': OK 
+```
+
 
 ## Update Micro BOSH
 

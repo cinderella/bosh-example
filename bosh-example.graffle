@@ -46,7 +46,7 @@
 	<key>Creator</key>
 	<string>Shane Witbeck</string>
 	<key>DisplayScale</key>
-	<string>1 0/72 in = 1 0/72 in</string>
+	<string>1 0/72 in = 1.0000 in</string>
 	<key>GraphDocumentVersion</key>
 	<integer>8</integer>
 	<key>GraphicsList</key>
@@ -63,8 +63,8 @@
 			<integer>30</integer>
 			<key>Points</key>
 			<array>
-				<string>{277.4224941669026, 485.41922179523476}</string>
-				<string>{306.77750583309745, 530.58077820476535}</string>
+				<string>{279.20009092500288, 501.38052971933712}</string>
+				<string>{304.12131966168249, 530.61909938564111}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -98,8 +98,8 @@
 			<integer>29</integer>
 			<key>Points</key>
 			<array>
-				<string>{269.34290367733047, 485.49918564671708}</string>
-				<string>{266.77138203695523, 530.50081435328298}</string>
+				<string>{268.75425287324902, 501.49895180525687}</string>
+				<string>{266.87336610274372, 530.50104319703166}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -133,8 +133,8 @@
 			<integer>28</integer>
 			<key>Points</key>
 			<array>
-				<string>{261.28923741765823, 485.39725945353132}</string>
-				<string>{226.73933401091324, 530.60274054646868}</string>
+				<string>{258.34721831496142, 501.35674233600076}</string>
+				<string>{229.58706825962764, 530.64285435245904}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -225,6 +225,8 @@
 			<integer>26</integer>
 			<key>Shape</key>
 			<string>Rectangle</string>
+			<key>Style</key>
+			<dict/>
 			<key>Text</key>
 			<dict>
 				<key>Align</key>
@@ -250,8 +252,8 @@
 			<integer>25</integer>
 			<key>Points</key>
 			<array>
-				<string>{269.58229635147632, 371.49999504063675}</string>
-				<string>{269.98710556373902, 462.50000032546899}</string>
+				<string>{269.50001585151966, 456.5}</string>
+				<string>{269.50001585151966, 478.5}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -285,8 +287,8 @@
 			<integer>23</integer>
 			<key>Points</key>
 			<array>
-				<string>{269.50000705536559, 241.75}</string>
-				<string>{269.50000705536559, 334.5}</string>
+				<string>{269.50000705536559, 323.75}</string>
+				<string>{269.50000705536559, 419.5}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -320,8 +322,8 @@
 			<integer>22</integer>
 			<key>Points</key>
 			<array>
-				<string>{269.49998689918425, 128.5}</string>
-				<string>{269.49998689918425, 204.75}</string>
+				<string>{269.49998689918425, 210.5}</string>
+				<string>{269.49998689918425, 286.75}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -345,7 +347,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{201, 463}, {138, 22}}</string>
+			<string>{{200.5, 479}, {138, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -365,11 +367,40 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{103, 440}, {305, 144}}</string>
+			<string>{{236, 420}, {67, 36}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>15</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs24 \cf0 Cinderella}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{56.935543945565485, 401.70176853327467}, {423.61111111111109, 200}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
 			<integer>16</integer>
+			<key>Line</key>
+			<dict>
+				<key>ID</key>
+				<integer>29</integer>
+				<key>Position</key>
+				<real>0.0069931759499013424</real>
+				<key>RotationType</key>
+				<integer>0</integer>
+			</dict>
 			<key>Shape</key>
 			<string>Cloud</string>
 			<key>Style</key>
@@ -391,53 +422,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{236, 335}, {67, 36}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>15</integer>
-			<key>Shape</key>
-			<string>Rectangle</string>
-			<key>Text</key>
-			<dict>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
-\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs24 \cf0 Cinderella}</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{91, 302}, {277, 102}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>14</integer>
-			<key>Shape</key>
-			<string>Cloud</string>
-			<key>Style</key>
-			<dict/>
-			<key>Text</key>
-			<dict>
-				<key>Align</key>
-				<integer>0</integer>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
-\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
-
-\f0\b\fs24 \cf0 CloudFoundry}</string>
-				<key>VerticalPad</key>
-				<integer>0</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{242.5, 205.25}, {54, 36}}</string>
+			<string>{{242.5, 287.25}, {54, 36}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -457,7 +442,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{100, 172}, {277, 102}}</string>
+			<string>{{100, 254}, {277, 102}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -483,7 +468,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{242.49999713897705, 92}, {54, 36}}</string>
+			<string>{{242.49999713897705, 174}, {54, 36}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -549,7 +534,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2012-11-16 16:17:23 +0000</string>
+	<string>2012-12-06 15:50:15 +0000</string>
 	<key>Modifier</key>
 	<string>Shane Witbeck</string>
 	<key>NotesVisible</key>
