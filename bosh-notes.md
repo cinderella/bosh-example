@@ -20,21 +20,27 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
 7. cd ../bosh/agent
 8. bundle install
 9. extra packages needed: `sudo apt-get install debootstrap kpartx`
-10. create stemcell from manifest and tarball created in step 6: `rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]`
+10. create stemcell from manifest and tarball created in step 6 (from bosh/agent): `rake stemcell2:micro[aws,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.yml,/root/projects/bosh-release/dev_releases/cinders-10.1-dev.tgz]`
   
 	Generated stemcell: /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz
 
-11. 
-12. 
+11. cd /var/vcap/deployments
+12. `gem install bosh_deployer`
+13. select cinders deployment: `bosh deployment cinders`
+
+WARNING! Your target has been changed to `http://cinders:25555'!
+Deployment set to '/var/vcap/deployments/cinders/micro_bosh.yml'
+
+14. do actual deploy of micro bosh stemcell: `bosh deploy /var/tmp/bosh/agent-0.6.7-18060/work/work/micro-bosh-stemcell-aws-0.7.0.tgz` 
 
 ---
 
 ## References
 
 - [Create inception vm](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/aws/create-an-aws-inception-vm.md)
-- create micro bosh from new stemcell: https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md
-- Prepare inception script: https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh
-- Hints on how to create a cpi: https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ
+- [Create micro bosh from new stemcell](https://github.com/drnic/bosh-getting-started/blob/master/create-a-bosh/creating-a-micro-bosh-from-stemcell.md)
+- [Prepare inception script](https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh)
+- [Hints on how to create a cpi](https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ)
 
 ---
 
