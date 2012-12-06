@@ -11,6 +11,7 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
 1. `gem install fog`
 2. create key pair specifically for fog
 3. create a fog config:
+
 ```
 :default:
   :aws_access_key_id:     YOUR_ACCESS_KEY
