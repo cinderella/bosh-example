@@ -22,17 +22,26 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
 
 ```
 connection = Fog::Compute.new({ :provider => 'AWS', :region => 'us-east-1' })
+```
 
+### Import key pair
+```
 Fog.credentials = Fog.credentials.merge({ :private_key_path => "/Users/shane/.ssh/fog_rsa", :public_key_path => "/Users/shane/.ssh/fog_rsa.pub" })
 connection.import_key_pair('shane-fog', IO.read('/Users/shane/.ssh/fog_rsa.pub')) if connection.key_pairs.get('shane-fog').nil?
+```
 
+### Boostrap new instance and associate EIP
+```
 server = connection.servers.bootstrap({:key_name => 'shane-fog', :flavor_id => 'm1.small', :bits => 64, :username => 'ubuntu'})
 
 address = connection.addresses.create
 address.server = server
 server.reload
 server.dns_name
+```
 
+### Create a volume and mount it to the new instance
+```
 volume = connection.volumes.create(:size => 16, :device => "/dev/sdi", :availability_zone => server.availability_zone)
 volume.server = server
 
@@ -40,17 +49,10 @@ server.ssh(['sudo mkfs.ext4 /dev/sdi -F'])
 server.ssh(['sudo mkdir -p /var/vcap/store'])
 server.ssh(['sudo mount /dev/sdi /var/vcap/store'])
 puts server.ssh(['df']).first.stdout
+```
 
-ssh -i /Users/shane/.ssh/fog_rsa ubuntu@ec2-174-129-251-149.compute-1.amazonaws.com
-sudo su -
-
-export ORIGUSER=ubuntu
-curl -s https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh | bash
-source /etc/profile
-
-
-create security group for micro bosh
-
+### Create security group
+```
 connection = Fog::Compute.new({ :provider => 'AWS', :region => 'us-east-1' })
 connection.security_groups.create name: "microbosh", description: "microboshes"
 group = connection.security_groups.get("microbosh")
@@ -60,7 +62,21 @@ group.authorize_port_range(25888..25888) # AWS Registry API
 group.authorize_port_range(22..22)       # SSH access
 ```
 
+quit fog
+
+### Connect to inception instance and run prepare_inception script
+```
+ssh -i /Users/shane/.ssh/fog_rsa ubuntu@ec2-174-129-251-149.compute-1.amazonaws.com
+sudo su -
+
+export ORIGUSER=ubuntu
+curl -s https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh | bash
+source /etc/profile
+```
+
 ## Procedure
+
+Now that the inception vm is created, start the edit/build/deploy cycle.
 
 In an effort to save time with downloading and uploading artifacts, the following steps were all done on an EC2 instance (the inception vm created above).
 
