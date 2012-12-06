@@ -1,4 +1,6 @@
-# bosh-example (in progress) #
+# bosh-example #
+
+**NOTE: This example has been abandoned until further resources can be allocated.**
 
 This example will walk through the steps necessary to use BOSH with Cinderella. This is not a best practice but instead is a proof of concept to illustrate Cinderella's EC2 capabilities.
 
