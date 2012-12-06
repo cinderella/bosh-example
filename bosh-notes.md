@@ -29,18 +29,17 @@ Because BOSH documentation is sparse and out of date, I've compiled these notes 
 
 ---
 
-References:
+## References
 
 - Prepare inception script: https://raw.github.com/drnic/bosh-getting-started/master/scripts/prepare_inception.sh
 - Hints on how to create a cpi: https://groups.google.com/a/cloudfoundry.org/forum/#!msg/bosh-dev/vqu_uqdb8Wo/021IPrRtizUJ
 
-
 ---
 
-fog stuff for getting an inception instance going:
 
+## Using Fog to Create an Inception VM
 
-
+```
 connection = Fog::Compute.new({ :provider => 'AWS', :region => 'us-east-1' })
 
 Fog.credentials = Fog.credentials.merge({ :private_key_path => "/Users/shane/.ssh/fog_rsa", :public_key_path => "/Users/shane/.ssh/fog_rsa.pub" })
@@ -78,3 +77,4 @@ group.authorize_port_range(25555..25555) # BOSH Director API
 group.authorize_port_range(6868..6868)   # Message Bus
 group.authorize_port_range(25888..25888) # AWS Registry API
 group.authorize_port_range(22..22)       # SSH access
+```
